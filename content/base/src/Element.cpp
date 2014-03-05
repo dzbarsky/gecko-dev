@@ -2809,8 +2809,8 @@ already_AddRefed<Animation>
 Element::Animate(JSContext* cx, const Sequence<JSObject*>& keyframes,
                  const double& aTiming, ErrorResult& rv)
 {
-  TimingInputInitializer timing;
-  timing.mIterationDuration = aTiming;
+  TimingInput timing;
+  timing.mDuration = aTiming;
   return Animate(cx, keyframes, timing, rv);
 }
 

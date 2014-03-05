@@ -24,5 +24,5 @@ interface Animation /*: TimedItem */{
 //             attribute (AnimationEffect or CustomEffect)? effect;
     readonly attribute AnimationTarget?                   target;
     [NewObject]
-    Animation clone ();
+    Animation clone();
 };
