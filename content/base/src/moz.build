@@ -70,6 +70,7 @@ EXPORTS.mozilla.dom += [
     'ShadowRoot.h',
     'Text.h',
     'TimedItem.h',
+    'Timing.h',
     'TreeWalker.h',
 ]
 
@@ -160,6 +161,7 @@ UNIFIED_SOURCES += [
     'Text.cpp',
     'ThirdPartyUtil.cpp',
     'TimedItem.cpp',
+    'Timing.cpp',
     'TreeWalker.cpp',
     'WebSocket.cpp',
 ]

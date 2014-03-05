@@ -107,6 +107,7 @@ namespace dom {
 
 class Animation;
 class Link;
+class TimingInput;
 class UndoManager;
 class DOMRect;
 class DOMRectList;
@@ -737,7 +738,7 @@ public:
   void InsertAdjacentHTML(const nsAString& aPosition, const nsAString& aText,
                           ErrorResult& aError);
   already_AddRefed<Animation> Animate(JSContext* aCx, const Sequence<JSObject*>& keyframes,
-                                      double aTiming, ErrorResult& rv);
+                                      const TimingInput& aTiming, ErrorResult& rv);
 
   nsTArray<nsRefPtr<Animation> >& GetAnimations() { return mAnimations; }
 

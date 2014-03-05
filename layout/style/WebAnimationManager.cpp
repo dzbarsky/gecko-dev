@@ -11,12 +11,10 @@ using namespace mozilla;
 using namespace mozilla::css;
 
 dom::Animation*
-WebAnimationManager::AddAnimation(Element* aElement, double aTiming)
+WebAnimationManager::AddAnimation(Element* aElement, const TimingInput& aTiming)
 {
-  nsRefPtr<dom::Animation> anim = new dom::Animation(aElement);
+  nsRefPtr<dom::Animation> anim = new dom::Animation(aElement, aTiming);
   mAnimations.AppendElement(anim);
-  anim->mDuration = TimeDuration::FromSeconds(aTiming);
-  anim->mStartTime = mPresContext->RefreshDriver()->MostRecentRefresh();
   if (!mObservingRefreshDriver) {
     // We need to observe the refresh driver.
     mPresContext->RefreshDriver()->AddRefreshObserver(this, Flush_Style);
