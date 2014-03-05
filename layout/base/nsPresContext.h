@@ -65,6 +65,7 @@ struct nsFontFaceRuleContainer;
 class nsObjectFrame;
 class nsTransitionManager;
 class nsAnimationManager;
+class WebAnimationManager;
 class nsRefreshDriver;
 class nsIWidget;
 class nsDeviceContext;
@@ -240,6 +241,7 @@ public:
 
   nsTransitionManager* TransitionManager() { return mTransitionManager; }
   nsAnimationManager* AnimationManager() { return mAnimationManager; }
+  WebAnimationManager* GetWebAnimationManager() { return mWebAnimationManager; }
 
   nsRefreshDriver* RefreshDriver() { return mRefreshDriver; }
 
@@ -1151,6 +1153,7 @@ protected:
   nsRefPtr<nsRefreshDriver> mRefreshDriver;
   nsRefPtr<nsTransitionManager> mTransitionManager;
   nsRefPtr<nsAnimationManager> mAnimationManager;
+  nsRefPtr<WebAnimationManager> mWebAnimationManager;
   nsRefPtr<mozilla::RestyleManager> mRestyleManager;
   nsIAtom*              mMedium;        // initialized by subclass ctors;
                                         // weak pointer to static atom

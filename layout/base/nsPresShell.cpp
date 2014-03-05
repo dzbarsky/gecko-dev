@@ -166,6 +166,7 @@
 #include "nsIDragSession.h"
 #include "nsIFrameInlines.h"
 #include "mozilla/gfx/2D.h"
+#include "WebAnimationManager.h"
 
 #ifdef ANDROID
 #include "nsIDocShellTreeOwner.h"
@@ -4038,6 +4039,8 @@ PresShell::FlushPendingNotifications(mozilla::ChangesToFlush aFlush)
           nsLayoutUtils::AreAsyncAnimationsEnabled() &&
           !mPresContext->StyleUpdateForAllAnimationsIsUpToDate()) {
         mPresContext->AnimationManager()->
+          FlushAnimations(CommonAnimationManager::Cannot_Throttle);
+        mPresContext->GetWebAnimationManager()->
           FlushAnimations(CommonAnimationManager::Cannot_Throttle);
         mPresContext->TransitionManager()->
           FlushTransitions(CommonAnimationManager::Cannot_Throttle);

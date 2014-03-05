@@ -55,6 +55,7 @@ if CONFIG['INTEL_ARCHITECTURE']:
     ]
 
 EXPORTS.mozilla.dom += [
+    'Animation.h',
     'Attr.h',
     'Comment.h',
     'DocumentFragment.h',
@@ -72,6 +73,7 @@ EXPORTS.mozilla.dom += [
 ]
 
 UNIFIED_SOURCES += [
+    'Animation.cpp',
     'Attr.cpp',
     'ChildIterator.cpp',
     'Comment.cpp',

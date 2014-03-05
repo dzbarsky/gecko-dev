@@ -52,6 +52,7 @@
 #include "mozilla/dom/TabChild.h"
 #include "nsRefreshDriver.h"
 #include "Layers.h"
+#include "WebAnimationManager.h"
 #include "nsIDOMEvent.h"
 
 #include "nsContentUtils.h"
@@ -1003,6 +1004,8 @@ nsPresContext::Init(nsDeviceContext* aDeviceContext)
 
   mAnimationManager = new nsAnimationManager(this);
 
+  mWebAnimationManager = new WebAnimationManager(this);
+
   // FIXME: Why is mozilla:: needed?
   mRestyleManager = new mozilla::RestyleManager(this);
 
@@ -1178,6 +1181,10 @@ nsPresContext::SetShell(nsIPresShell* aShell)
     if (mAnimationManager) {
       mAnimationManager->Disconnect();
       mAnimationManager = nullptr;
+    }
+    if (mWebAnimationManager) {
+      mWebAnimationManager->Disconnect();
+      mWebAnimationManager = nullptr;
     }
     if (mRestyleManager) {
       mRestyleManager->Disconnect();

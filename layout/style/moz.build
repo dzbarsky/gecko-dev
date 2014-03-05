@@ -127,6 +127,7 @@ UNIFIED_SOURCES += [
     'nsStyleUtil.cpp',
     'nsTransitionManager.cpp',
     'StyleRule.cpp',
+    'WebAnimationManager.cpp',
 ]
 
 # nsCSSRuleProcessor.cpp needs to be built separately because it uses plarena.h.
