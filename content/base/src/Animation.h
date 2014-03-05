@@ -78,6 +78,10 @@ public:
     return anim.forget();
   }
 
+  virtual already_AddRefed<TimedItem> CloneInternal() MOZ_OVERRIDE {
+    return Clone().downcast<TimedItem>();
+  }
+
   Element* GetParentObject() {
     return mElement;
   }
