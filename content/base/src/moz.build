@@ -68,9 +68,12 @@ EXPORTS.mozilla.dom += [
     'Link.h',
     'NodeIterator.h',
     'ShadowRoot.h',
+    'ParGroup.h',
+    'SeqGroup.h',
     'Text.h',
     'TimedItem.h',
     'Timing.h',
+    'TimingGroup.h',
     'TreeWalker.h',
 ]
 
@@ -157,11 +160,14 @@ UNIFIED_SOURCES += [
     'nsXMLContentSerializer.cpp',
     'nsXMLHttpRequest.cpp',
     'nsXMLNameSpaceMap.cpp',
+    'ParGroup.cpp',
+    'SeqGroup.cpp',
     'ShadowRoot.cpp',
     'Text.cpp',
     'ThirdPartyUtil.cpp',
     'TimedItem.cpp',
     'Timing.cpp',
+    'TimingGroup.cpp',
     'TreeWalker.cpp',
     'WebSocket.cpp',
 ]
